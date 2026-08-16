@@ -42,7 +42,9 @@ def clear_old_response():
 if "execution_triggered" not in st.session_state:
     st.session_state["execution_triggered"] = False
 
-uk_macro_feed = {"ONS_CPI": "3.2%", "BoE_Rate": "4.75%", "Energy_Cap": "+4.8%"}
+uk_macro_feed = {"UK CPI Inflation": "3.2%",
+                 "Bank of England Base Rate": "4.75%",
+                 "UK Energy Price Cap Shift": "+4.8%"}
 
 # --- UI HEADER ---
 st.title("NatWest Macro-Resilience Guardian")

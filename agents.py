@@ -25,8 +25,13 @@ class AgentState(TypedDict):
 class NatWestAgentCore:
     def __init__(self):
         # Initialize Groq endpoints with structural token caps
-        self.fast_llm = ChatGroq(model_name="llama-3.1-8b-instant", temperature=0.0)
-        self.deep_llm = ChatGroq(model_name="llama-3.3-70b-versatile", temperature=0.1, max_tokens=450)
+        self.fast_llm = ChatGroq(model_name="openai/gpt-oss-20b",
+                                 temperature=0.0
+                                 )
+        self.deep_llm = ChatGroq(model_name="groq/compound",
+                                 temperature=0.1,
+                                 max_tokens=450
+                                )
 
     def security_supervisor_node(self, state: AgentState) -> dict:
         """Node 1: Evaluates prompt injection, jailbreaks, and routes execution."""
